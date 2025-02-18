@@ -28,7 +28,7 @@ function operate(num1, opr, num2) {
             return multiply(num1, num2);
         case "/":
             return divide(num1, num2);
-        default;
+        default:
             return "Error";
     }
 }
