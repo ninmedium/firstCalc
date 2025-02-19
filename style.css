@@ -14,7 +14,31 @@ body {
 }
 
 .calcRow {
-    border: 1px solid black;
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
+button {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+#butt0 {
+    width: 180px;
+    border-radius: 40%;
+}
+
+#row5 {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+#row5-2 {
+    display: flex;
+    width: 225px;
+    justify-content: space-around;
+}
