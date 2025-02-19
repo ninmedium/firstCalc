@@ -24,9 +24,12 @@ function operate(num1, opr, num2) {
             return add(num1, num2);
         case "-":
             return subtract(num1, num2);
-        case "x":
+        case "*":
             return multiply(num1, num2);
         case "/":
+            if (num2 === 0) {
+                return "Error: Don't divide by 0"
+            }
             return divide(num1, num2);
         default:
             return "Error";
