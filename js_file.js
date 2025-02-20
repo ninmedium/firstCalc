@@ -35,3 +35,13 @@ function operate(num1, opr, num2) {
             return "Error";
     }
 }
+
+const displayNUM = document.querySelector("#displayNUM");
+
+const buttons = document.querySelectorAll(".num-butt")
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        displayNUM.textContent += button.textContent;
+    });
+});
