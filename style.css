@@ -50,6 +50,16 @@ button {
     height: 75px;
     min-width: 420px;
     background-color: white;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 5px;
+    padding-right: 5px;
+
+}
+
+#displayNUM {
+    font-size: 60px;
 }
 
 #buttDIV, #buttMULTIP, #buttMINUS, #buttPLUS {
