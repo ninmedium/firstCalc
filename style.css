@@ -56,10 +56,11 @@ button {
     background-color: rgb(82, 149, 160);
 }
 
-#buttEQUAL {
-    border-color: rgb(82, 149, 160);
+#buttAC {
+    background-color: rgb(221, 169, 72);
 }
 
 #buttDEL {
     background-color: rgb(191, 68, 93);
 }
+
