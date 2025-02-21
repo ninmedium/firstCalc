@@ -42,6 +42,8 @@ const buttons = document.querySelectorAll(".num-butt")
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
-        displayNUM.textContent += button.textContent;
+        if (displayNUM.textContent.length <= 12) {
+            displayNUM.textContent += button.textContent;
+        }
     });
 });
