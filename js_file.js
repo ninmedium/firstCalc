@@ -54,10 +54,14 @@ const oprButtons = document.querySelectorAll(".opr-butt");
 oprButtons.forEach(oprbtn => {
     oprbtn.addEventListener("click", () => {
         if (displayNUM.textContent.length >= 1) {
+            if (oprPressed === false) {
+                num1 = +displayNUM.textContent;
+            }
             opr = oprbtn.textContent;
             oprPressed = true;
             console.log(opr);
             console.log(oprPressed);
+            console.log(num1);
         }
     });
 });
