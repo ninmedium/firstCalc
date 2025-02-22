@@ -17,6 +17,7 @@ function divide(a, b) {
 let num1 = 0;
 let num2 = 0;
 let opr = "";
+let oprPressed = false;
 
 function operate(num1, opr, num2) {
     switch (opr) {
@@ -54,7 +55,9 @@ oprButtons.forEach(oprbtn => {
     oprbtn.addEventListener("click", () => {
         if (displayNUM.textContent.length >= 1) {
             opr = oprbtn.textContent;
+            oprPressed = true;
             console.log(opr);
+            console.log(oprPressed);
         }
     });
 });
