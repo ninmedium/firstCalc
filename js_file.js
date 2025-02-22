@@ -14,10 +14,11 @@ function divide(a, b) {
     return a / b;
 }
 
-let num1 = 0;
-let num2 = 0;
+let num1 = undefined;
+let num2 = undefined;
 let opr = "";
 let oprPressed = false;
+let twoNum = false;
 
 function operate(num1, opr, num2) {
     switch (opr) {
@@ -43,6 +44,11 @@ const buttons = document.querySelectorAll(".num-butt");
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
+        if (oprPressed) {
+            displayNUM.textContent = "";
+            oprPressed = false;
+            twoNum = true;
+        }
         if (displayNUM.textContent.length <= 12) {
             displayNUM.textContent += button.textContent;
         }
@@ -59,9 +65,16 @@ oprButtons.forEach(oprbtn => {
             }
             opr = oprbtn.textContent;
             oprPressed = true;
-            console.log(opr);
-            console.log(oprPressed);
-            console.log(num1);
         }
     });
+});
+
+const equal = document.querySelector("#buttEQUAL");
+
+equal.addEventListener("click", () => {
+    if (twoNum) {
+        num2 = +displayNUM.textContent;
+        displayNUM.textContent = operate(num1, opr, num2);
+        twoNum = false;
+    }
 });
