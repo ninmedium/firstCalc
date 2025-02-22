@@ -38,12 +38,23 @@ function operate(num1, opr, num2) {
 
 const displayNUM = document.querySelector("#displayNUM");
 
-const buttons = document.querySelectorAll(".num-butt")
+const buttons = document.querySelectorAll(".num-butt");
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         if (displayNUM.textContent.length <= 12) {
             displayNUM.textContent += button.textContent;
+        }
+    });
+});
+
+const oprButtons = document.querySelectorAll(".opr-butt");
+
+oprButtons.forEach(oprbtn => {
+    oprbtn.addEventListener("click", () => {
+        if (displayNUM.textContent.length >= 1) {
+            opr = oprbtn.textContent;
+            console.log(opr);
         }
     });
 });
