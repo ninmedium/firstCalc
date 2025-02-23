@@ -19,6 +19,7 @@ let num2 = undefined;
 let opr = "";
 let oprPressed = false;
 let twoNum = false;
+let res = "";
 
 function operate(num1, opr, num2) {
     switch (opr) {
@@ -36,6 +37,21 @@ function operate(num1, opr, num2) {
         default:
             return "Error";
     }
+}
+
+function formatResult(result) {
+    let resStr = result.toString();
+    if (resStr.length > 13) {
+        if (!isNaN(result)) {
+            resStr = Number(result).toExponential(6);
+            if (resStr.length > 13) {
+                resStr = resStr.slice(0, 13);
+            }
+        } else {
+            resStr = resStr.slice(0, 13);
+        }
+    }
+    return resStr;
 }
 
 const displayNUM = document.querySelector("#displayNUM");
@@ -62,7 +78,8 @@ oprButtons.forEach(oprbtn => {
         if (displayNUM.textContent.length >= 1) {
             if (twoNum) {
                 num2 = +displayNUM.textContent;
-                displayNUM.textContent = operate(num1, opr, num2);
+                res = operate(num1, opr, num2);
+                displayNUM.textContent = formatResult(res);
                 num1 = +displayNUM.textContent;
                 twoNum = false;
             } else {
@@ -79,7 +96,8 @@ const equal = document.querySelector("#buttEQUAL");
 equal.addEventListener("click", () => {
     if (twoNum) {
         num2 = +displayNUM.textContent;
-        displayNUM.textContent = operate(num1, opr, num2);
+        res = operate(num1, opr, num2);
+        displayNUM.textContent = formatResult(res);
         oprPressed = false;
         twoNum = false;
     }
@@ -111,7 +129,7 @@ const perc = document.querySelector("#buttPERC");
 
 perc.addEventListener("click", () => {
     if (displayNUM.textContent.length >= 1) {
-        displayNUM.textContent = (+displayNUM.textContent / 100);
+        displayNUM.textContent = formatResult(+displayNUM.textContent / 100);
     }
 });
 
