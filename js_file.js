@@ -106,3 +106,11 @@ decimal.addEventListener("click", () => {
         displayNUM.textContent += ".";
     }
 });
+
+const perc = document.querySelector("#buttPERC");
+
+perc.addEventListener("click", () => {
+    if (displayNUM.textContent.length >= 1) {
+        displayNUM.textContent = (+displayNUM.textContent / 100);
+    }
+});
