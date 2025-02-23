@@ -95,3 +95,14 @@ allClear.addEventListener("click", () => {
     oprPressed = false;
     twoNum = false;
 });
+
+const decimal = document.querySelector("#buttPOINT");
+
+decimal.addEventListener("click", () => {
+    if (displayNUM.textContent.includes(".")) {
+        return;
+    }
+    if (displayNUM.textContent.length >= 1 && displayNUM.textContent.length <= 12) {
+        displayNUM.textContent += ".";
+    }
+});
