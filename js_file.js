@@ -30,7 +30,7 @@ function operate(num1, opr, num2) {
             return multiply(num1, num2);
         case "/":
             if (num2 === 0) {
-                return "Error: Don't divide by 0"
+                return "Error"
             }
             return divide(num1, num2);
         default:
