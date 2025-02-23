@@ -60,7 +60,12 @@ const oprButtons = document.querySelectorAll(".opr-butt");
 oprButtons.forEach(oprbtn => {
     oprbtn.addEventListener("click", () => {
         if (displayNUM.textContent.length >= 1) {
-            if (oprPressed === false) {
+            if (twoNum) {
+                num2 = +displayNUM.textContent;
+                displayNUM.textContent = operate(num1, opr, num2);
+                num1 = +displayNUM.textContent;
+                twoNum = false;
+            } else {
                 num1 = +displayNUM.textContent;
             }
             opr = oprbtn.textContent;
@@ -75,6 +80,7 @@ equal.addEventListener("click", () => {
     if (twoNum) {
         num2 = +displayNUM.textContent;
         displayNUM.textContent = operate(num1, opr, num2);
+        oprPressed = false;
         twoNum = false;
     }
 });
