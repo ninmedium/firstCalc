@@ -84,3 +84,14 @@ equal.addEventListener("click", () => {
         twoNum = false;
     }
 });
+
+const allClear = document.querySelector("#buttAC");
+
+allClear.addEventListener("click", () => {
+    displayNUM.textContent = "";
+    num1 = undefined;
+    num2 = undefined;
+    opr = "";
+    oprPressed = false;
+    twoNum = false;
+});
