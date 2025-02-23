@@ -114,3 +114,16 @@ perc.addEventListener("click", () => {
         displayNUM.textContent = (+displayNUM.textContent / 100);
     }
 });
+
+const delButton = document.querySelector("#buttDEL");
+
+delButton.addEventListener("click", () => {
+    if (oprPressed) {
+        oprPressed = false;
+        opr = "";
+        return;
+    }
+    if (displayNUM.textContent.length > 0) {
+        displayNUM.textContent = displayNUM.textContent.slice(0, -1);
+    }
+});
